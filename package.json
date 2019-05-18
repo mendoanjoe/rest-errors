@@ -9,7 +9,8 @@
     "postversion": "git push origin master && git push origin master --tags && npm publish",
     "patch": "npm version patch -m 'Bump to version %s'",
     "minor": "npm version minor -m 'Bump to version %s'",
-    "major": "npm version major -m 'Bump to version %s'"
+    "major": "npm version major -m 'Bump to version %s'",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/mendoanjoe/rest-errors/issues"
   },
-  "homepage": "https://github.com/mendoanjoe/rest-errors#readme"
+  "homepage": "https://github.com/mendoanjoe/rest-errors#readme",
+  "devDependencies": {
+    "mocha": "^6.1.4",
+    "should": "^13.2.3"
+  }
 }
