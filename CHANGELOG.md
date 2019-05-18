@@ -1,8 +1,8 @@
 # Changelog: HTTP Status
 
-## Trunk
+## Version 0.2.0
 - update: change all of module
-- return http status and message
+- add: return http status and message
 
 ## Version 0.1.1
 - add: Travis CI
