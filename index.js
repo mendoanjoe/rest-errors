@@ -1,3 +1,6 @@
+/**
+ * You can contribute here
+ */
 module.exports = {
   // 400
   badRequest_en: 'The API request is invalid or improperly formed. Consequently, the API server could not understand the request.',
