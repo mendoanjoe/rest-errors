@@ -1,7 +1,8 @@
 /**
  * You can contribute here
  */
-module.exports = {
+
+let c = {
   // 400
   badRequest_en: 'The API request is invalid or improperly formed. Consequently, the API server could not understand the request.',
   badRequest_id: 'Permintaan API tidak valid atau tidak terbentuk dengan benar. Akibatnya, server API tidak dapat memahami permintaan tersebut.',
@@ -68,3 +69,198 @@ module.exports = {
   internalError_en: 'The request failed due to an internal error.',
   internalError_id: 'Permintaan gagal karena kesalahan internal.',
 };
+
+let RestErrors = function(options){
+  this.lang = options.lang ? options.lang : this.lang;
+  this.envCon = options.env ? options.env : this.envCon;
+};
+
+RestErrors.prototype.badRequest = function() {
+  let m = c.badRequest_id;
+  if (this.lang === 'en') m = c.badRequest_en;
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.badContent = function() {
+  let m = c.badContent_id;
+  if (this.lang === 'en') m = c.badContent_en;
+
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.invalid = function() {
+  let m = c.invalid_id;
+  if (this.lang === 'en') m = c.invalid_en;
+
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.invalidHeader = function() {
+  let m = c.invalidHeader_id;
+  if (this.lang === 'en') m = c.invalidHeader_en;
+
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.invalidParameter = function() {
+  let m = c.invalidParameter_id;
+  if (this.lang === 'en') m = c.invalidParameter_en;
+
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.invalidQuery = function() {
+  let m = c.invalidQuery_id;
+  if (this.lang === 'en') m = c.invalidQuery_en;
+
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.keyExpired = function() {
+  let m = c.keyExpired_id;
+  if (this.lang === 'en') m = c.keyExpired_en;
+
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.keyInvalid = function() {
+  let m = c.keyInvalid_id;
+  if (this.lang === 'en') m = c.keyExpired_en;
+
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.required = function() {
+  let m = c.required_id;
+  if (this.lang === 'en') m = c.required_en;
+
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.unknownApi = function() {
+  let m = c.unknownApi_id;
+  if (this.lang === 'en') m = c.unknownApi_en;
+
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.accountUnverifiedEmail = function() {
+  let m = c.accountUnverifiedEmail_id;
+  if (this.lang === 'en') m = c.accountUnverifiedEmail_en;
+
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.accountUnverifiedPhone = function() {
+  let m = c.accountUnverifiedPhone_id;
+  if (this.lang === 'en') m = c.accountUnverifiedPhone_en;
+
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.accountRegisteredEmail = function() {
+  let m = c.accountRegisteredEmail_id;
+  if (this.lang === 'en') m = c.accountRegisteredEmail_en;
+
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.accountRegisteredPhone = function() {
+  let m = c.accountRegisteredPhone_id;
+  if (this.lang === 'en') m = c.accountRegisteredPhone_en;
+
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.accountNotRegisteredEmail = function() {
+  let m = c.accountNotRegisteredEmail_id;
+  if (this.lang === 'en') m = c.accountNotRegisteredEmail_en;
+
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.accountNotRegisteredPhone = function() {
+  let m = c.accountNotRegisteredPhone_id;
+  if (this.lang === 'en') m = c.accountNotRegisteredPhone_en;
+
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.accountVerifedEmail = function() {
+  let m = c.accountVerifedEmail_id;
+  if (this.lang === 'en') m = c.accountVerifedEmail_en;
+
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.accountVerifedPhone = function() {
+  let m = c.accountVerifedPhone_id;
+  if (this.lang === 'en') m = c.accountVerifedPhone_en;
+
+  return { message: m, status: 400 };
+};
+
+RestErrors.prototype.unauthorized = function() {
+  let m = c.unauthorized_id;
+  if (this.lang === 'en') m = c.unauthorized_en;
+
+  return { message: m, status: 401 };
+};
+
+RestErrors.prototype.authError = function() {
+  let m = c.authError_id;
+  if (this.lang === 'en') m = c.authError_en;
+
+  return { message: m, status: 401 };
+};
+
+RestErrors.prototype.expired = function() {
+  let m = c.expired_id;
+  if (this.lang === 'en') m = c.expired_en;
+
+  return { message: m, status: 401 };
+};
+
+RestErrors.prototype.expiredOTP = function() {
+  let m = c.expiredOTP_id;
+  if (this.lang === 'en') m = c.expiredOTP_en;
+
+  return { message: m, status: 401 };
+};
+
+RestErrors.prototype.forbidden = function() {
+  let m = c.forbidden_id;
+  if (this.lang === 'en') m = c.forbidden_en;
+
+  return { message: m, status: 403 };
+};
+
+RestErrors.prototype.notFound = function() {
+  let m = c.notFound_id;
+  if (this.lang === 'en') m = c.notFound_en;
+
+  return { message: m, status: 404 };
+};
+
+RestErrors.prototype.rateLimitExceeded = function() {
+  let m = c.rateLimitExceeded_id;
+  if (this.lang === 'en') m = c.rateLimitExceeded_en;
+
+  return { message: m, status: 403 };
+};
+
+RestErrors.prototype.uploadTooLarge = function() {
+  let m = c.uploadTooLarge_id;
+  if (this.lang === 'en') m = c.uploadTooLarge_en;
+
+  return { message: m, status: 413 };
+};
+
+RestErrors.prototype.internalError = function() {
+  let m = c.internalError_id;
+  if (this.lang === 'en') m = c.internalError_en;
+
+  return { message: m, status: 500 };
+};
+
+module.exports = exports = RestErrors;
